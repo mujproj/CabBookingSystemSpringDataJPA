@@ -46,8 +46,8 @@ public class CustomerService implements ICustomerService {
 
 	@Override
 	public List<Customer> viewCustomers() {
-		// TODO Auto-generated method stub
-		return null;
+		List<Customer> listOfCustomer = customerDao.findAll();
+		return listOfCustomer;
 	}
 
 	@Override

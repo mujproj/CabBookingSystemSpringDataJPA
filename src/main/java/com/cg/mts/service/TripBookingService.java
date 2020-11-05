@@ -43,13 +43,13 @@ public class TripBookingService implements ITripBookingService {
 
 	@Override
 	public List<TripBooking> viewAllTripsCustomer(int customerId) {
-		// TODO Auto-generated method stub
-		return null;
+		List<TripBooking> trips = tripBookingDao.findByCustomerId(customerId);
+		return trips;
 	}
 
 	@Override
 	public TripBooking calculateBill(int customerId) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 

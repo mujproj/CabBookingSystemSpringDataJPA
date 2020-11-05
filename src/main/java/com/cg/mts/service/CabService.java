@@ -45,14 +45,14 @@ public class CabService implements ICabService {
 
 	@Override
 	public List<Cab> viewCabsOfType(String carType) {
-		// TODO Auto-generated method stub
-		return null;
+		List<Cab> cabsOfCarType = cabDao.findByCarType(carType);
+		return cabsOfCarType;
 	}
 
 	@Override
 	public int countCabsOfType(String carType) {
-		// TODO Auto-generated method stub
-		return 0;
+		int count = cabDao.countCabsOfType(carType);
+		return count;
 	}
 
 	// private final EntityManager entityManager;

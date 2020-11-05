@@ -1,7 +1,11 @@
 package com.cg.mts.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -33,5 +37,11 @@ public class TripBookingController {
 	@DeleteMapping("/delete/tripbooking")
 	public void delete(TripBooking tripBooking) {
 		tripBooking = tripBookingService.deleteTripBooking(tripBooking);
+	}
+	
+	@GetMapping("/get/customerWiseTrips/{id}")
+	public List<TripBooking> getTrips(@PathVariable("id") int customerId){
+		List<TripBooking> trips = tripBookingService.viewAllTripsCustomer(customerId);
+		return trips;
 	}
 }
