@@ -8,33 +8,36 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cg.mts.entities.Cab;
 import com.cg.mts.service.ICabService;
 
+@RequestMapping("/cab")
 @RestController
 public class CabController {
 
 	@Autowired
 	private ICabService cabService;
 
-	@PostMapping("/add/cab")
-	public Cab add() {
-		Cab cab = new Cab();
-		cab = cabService.insertCab(cab);
+	@PostMapping("/add")
+	public Cab add(@RequestBody Cab cab) {
+		Cab newCab = new Cab(cab.getCarType(), cab.getPerKmRate());
+		cab = cabService.insertCab(newCab);
 		return cab;
 	}
 
-	@PutMapping("/update/cab")
-	public Cab update() {
-		Cab cab = new Cab("abc", 4.5f);
-		cab = cabService.updateCab(cab);
-		return cab;
+	@PutMapping("/update/{id}")
+	public Cab update(@PathVariable("id") int cabId, @RequestBody Cab newCab) {
+		newCab.setCabId(cabId);
+		newCab = cabService.updateCab(newCab);
+		return newCab;
 	}
 
-	@DeleteMapping("/delete/cab")
-	public void delete(Cab cab) {
+	@DeleteMapping("/delete")
+	public void delete(@RequestBody Cab cab) {
 		cab = cabService.deleteCab(cab);
 	}
 	

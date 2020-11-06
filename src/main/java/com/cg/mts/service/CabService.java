@@ -23,35 +23,35 @@ import com.cg.mts.entities.Cab;
 public class CabService implements ICabService {
 
 	@Autowired
-	private ICabRepository cabDao;
+	private ICabRepository cabRepository;
 
 	@Override
 	public Cab insertCab(Cab cab) {
-		cab = cabDao.save(cab);
+		cab = cabRepository.save(cab);
 		return cab;
 	}
 
 	@Override
 	public Cab updateCab(Cab cab) {
-		cab = cabDao.save(cab);
+		cab = cabRepository.save(cab);
 		return cab;
 	}
 
 	@Override
 	public Cab deleteCab(Cab cab) {
-		cabDao.delete(cab);
+		cabRepository.delete(cab);
 		return cab;
 	}
 
 	@Override
 	public List<Cab> viewCabsOfType(String carType) {
-		List<Cab> cabsOfCarType = cabDao.findByCarType(carType);
+		List<Cab> cabsOfCarType = cabRepository.findByCarType(carType);
 		return cabsOfCarType;
 	}
 
 	@Override
 	public int countCabsOfType(String carType) {
-		int count = cabDao.countCabsOfType(carType);
+		int count = cabRepository.countCabsOfType(carType);
 		return count;
 	}
 

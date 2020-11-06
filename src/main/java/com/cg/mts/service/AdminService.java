@@ -30,26 +30,26 @@ import com.cg.mts.entities.TripBooking;
 public class AdminService implements IAdminService {
 
 	@Autowired
-	private IAdminRepository adminDao;
+	private IAdminRepository adminRepository;
 
 	@Override
 	public Admin insertAdmin(Admin admin) {
 		// TODO Auto-generated method stub
-		admin = adminDao.save(admin);
+		admin = adminRepository.save(admin);
 		return admin;
 	}
 
 	@Override
 	public Admin updateAdmin(Admin admin) {
-		admin = adminDao.save(admin);
+		admin = adminRepository.save(admin);
 		return admin;
 	}
 
 	@Override
 	public Admin deleteAdmin(int adminId) {
-		Optional<Admin> adminOptional = adminDao.findById(adminId);
+		Optional<Admin> adminOptional = adminRepository.findById(adminId);
 		Admin admin = adminOptional.get();
-		adminDao.delete(admin);
+		adminRepository.delete(admin);
 		return admin;
 		
 	}

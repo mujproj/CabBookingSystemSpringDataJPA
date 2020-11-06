@@ -21,29 +21,29 @@ public class TripBookingService implements ITripBookingService {
 	// private EntityManager entityManager;
 
 	@Autowired
-	private ITripBookingRepository tripBookingDao;
+	private ITripBookingRepository tripBookingRepository;
 
 	@Override
 	public TripBooking insertTripBooking(TripBooking tripBooking) {
-		tripBooking = tripBookingDao.save(tripBooking);
+		tripBooking = tripBookingRepository.save(tripBooking);
 		return tripBooking;
 	}
 
 	@Override
 	public TripBooking updateTripBooking(TripBooking tripBooking) {
-		tripBooking = tripBookingDao.save(tripBooking);
+		tripBooking = tripBookingRepository.save(tripBooking);
 		return tripBooking;
 	}
 
 	@Override
 	public TripBooking deleteTripBooking(TripBooking tripBooking) {
-		tripBookingDao.delete(tripBooking);
+		tripBookingRepository.delete(tripBooking);
 		return tripBooking;
 	}
 
 	@Override
 	public List<TripBooking> viewAllTripsCustomer(int customerId) {
-		List<TripBooking> trips = tripBookingDao.findByCustomerId(customerId);
+		List<TripBooking> trips = tripBookingRepository.findByCustomerId(customerId);
 		return trips;
 	}
 

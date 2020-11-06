@@ -24,35 +24,35 @@ import java.util.regex.Pattern;
 public class CustomerService implements ICustomerService {
 
 	@Autowired
-	private ICustomerRepository customerDao;
+	private ICustomerRepository customerRepository;
 
 	@Override
 	public Customer insertCustomer(Customer customer) {
-		customer = customerDao.save(customer);
+		customer = customerRepository.save(customer);
 		return customer;
 	}
 
 	@Override
 	public Customer updateCustomer(Customer customer) {
-		customer = customerDao.save(customer);
+		customer = customerRepository.save(customer);
 		return customer;
 	}
 
 	@Override
 	public Customer deleteCustomer(Customer customer) {
-		customerDao.delete(customer);
+		customerRepository.delete(customer);
 		return customer;
 	}
 
 	@Override
 	public List<Customer> viewCustomers() {
-		List<Customer> listOfCustomer = customerDao.findAll();
+		List<Customer> listOfCustomer = customerRepository.findAll();
 		return listOfCustomer;
 	}
 
 	@Override
 	public Customer viewCustomer(int customerId) {
-		Optional<Customer> customers = customerDao.findById(customerId);
+		Optional<Customer> customers = customerRepository.findById(customerId);
 		Customer customer = customers.get();
 		return customer;
 	}
