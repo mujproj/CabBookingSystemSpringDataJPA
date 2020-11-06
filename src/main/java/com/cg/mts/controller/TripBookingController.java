@@ -46,4 +46,11 @@ public class TripBookingController {
 		List<TripBooking> trips = tripBookingService.viewAllTripsCustomer(customerId);
 		return trips;
 	}
+	
+	@GetMapping("/get/calculateBill/{id}")
+	public Float calculateBill(@PathVariable("id") int customerId) {
+		TripBooking tripBooking = tripBookingService.calculateBill(customerId);
+		float bill = tripBooking.getBill();
+		return bill;
+	}
 }

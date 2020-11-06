@@ -51,4 +51,10 @@ public class CustomerController {
 		List<Customer> listOfAllCustomer = customerService.viewCustomers();
 		return listOfAllCustomer;
 	}
+	
+	@GetMapping("/get/validateCustomer/{username}/{password}")
+	public Customer validateCustomer(@PathVariable("username") String username, @PathVariable("password") String password) {
+		Customer customer = customerService.validateCustomer(username, password);
+		return customer;
+	}
 }

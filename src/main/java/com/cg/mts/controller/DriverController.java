@@ -1,5 +1,7 @@
 package com.cg.mts.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -42,5 +44,11 @@ public class DriverController {
 	public Driver getDriver(@PathVariable("id") int driverId) {
 		Driver driver = driverService.viewDriver(driverId);
 		return driver;
+	}
+	
+	@GetMapping("/get/viewBestDrivers")
+	public List<Driver> viewBestDrivers(){
+		List<Driver> bestDrivers = driverService.viewBestDrivers();
+		return bestDrivers;
 	}
 }
