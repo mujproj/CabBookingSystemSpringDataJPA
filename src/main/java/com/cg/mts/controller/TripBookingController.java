@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.cg.mts.entities.TripBooking;
 import com.cg.mts.service.ITripBookingService;
-import com.cg.mts.service.TripBookingService;
 
 /* This would signify we are in tripbooking controller */
 @RequestMapping("/tripbooking")

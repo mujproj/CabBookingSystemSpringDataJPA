@@ -1,10 +1,6 @@
 package com.cg.mts.service;
 
 import java.util.List;
-
-import javax.persistence.EntityManager;
-import javax.persistence.EntityTransaction;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

@@ -3,22 +3,14 @@ package com.cg.mts.service;
 //import com.cg.mts.dao.CustomerDao;
 //import com.cg.mts.util.Util;
 import com.cg.mts.entities.Customer;
-import com.cg.mts.exception.CabNotFoundException;
 import com.cg.mts.exception.CustomerNotFoundException;
 import com.cg.mts.exception.InvalidCustomerException;
 import com.cg.mts.repository.ICustomerRepository;
-
-import javax.persistence.EntityManager;
-import javax.persistence.EntityTransaction;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.regex.Pattern;
 
 /* This annotation marks the class as a service class */
 @Service

@@ -7,7 +7,6 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import com.cg.mts.entities.Cab;
-import com.cg.mts.exception.CabNotFoundException;
 
 public interface ICabRepository extends JpaRepository<Cab, Integer> {
 	// public Cab insertCab(Cab cab);

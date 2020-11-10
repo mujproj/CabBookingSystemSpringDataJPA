@@ -1,12 +1,7 @@
 package com.cg.mts.service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.regex.Pattern;
-
-import javax.persistence.EntityManager;
-import javax.persistence.EntityTransaction;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,8 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 //import com.cg.mts.dao.DriverDao;
 import com.cg.mts.exception.DriverNotFoundException;
-import com.cg.mts.exception.InvalidAdminException;
-import com.cg.mts.exception.InvalidCustomerException;
 import com.cg.mts.exception.InvalidDriverException;
 import com.cg.mts.repository.IDriverRepository;
 //import com.cg.mts.util.Util;
