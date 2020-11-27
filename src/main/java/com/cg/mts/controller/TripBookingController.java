@@ -3,6 +3,7 @@ package com.cg.mts.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,6 +23,7 @@ import com.cg.mts.service.ITripBookingService;
  * This annotation defines a class as a controller in spring boot. Rest
  * controller consists of @Controller and @ResponseBody annotation
  */
+@CrossOrigin("*")
 public class TripBookingController {
 
 	/*
